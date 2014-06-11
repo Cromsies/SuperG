@@ -70,9 +70,9 @@ public class Enemy1Move : MonoBehaviour
     private void OnTriggerEnter(Collider c)
     {
         //Debug.Log(c.name + " | " + currentTarget.name);
-	
-		if (c.name == currentTarget.name)
-			Next();
+		if (currentTarget !=null)
+			if (c.name == currentTarget.name)
+				Next();
 	
 
 		if (c.name == endMarker.name)
