@@ -7,13 +7,23 @@ public class Enemy1Move : MonoBehaviour
 {
     public Transform startMarker;
     public Transform midPoint1;
-    public Transform midPoint2;
+	public Transform midPoint2;
+	//public Transform AttackPat;
+	//public Transform RunAround;
+
     public Transform endMarker;
     //public bool hasSpawn = false;
     public float speed = 0.1f;
     
     public Transform currentTarget = null;
     public Animator anim = null;
+
+	IEnumerator MyMethod() 
+	{
+		yield return new WaitForSeconds(4);
+
+		yield break;
+	}
 
     private void Start()
     {
@@ -30,17 +40,20 @@ public class Enemy1Move : MonoBehaviour
         
         if (currentTarget == null )
             Idle();
+
+		if (transform.position == startMarker.position)
+			currentTarget = midPoint1;
     }
 
     private void Next()
     {
-        if (currentTarget == midPoint1)
+   
+		if (currentTarget == midPoint1)
             currentTarget = midPoint2;
         else if (currentTarget == midPoint2)
             currentTarget = endMarker;
-        if (midPoint2 == null)
-            midPoint2 = endMarker;
-		if (currentTarget == null)
+       
+
 			return;
       
         
@@ -51,19 +64,22 @@ public class Enemy1Move : MonoBehaviour
     {
         if (anim != null)
             anim.SetBool("Idle", true);
+		StartCoroutine(MyMethod());
     }
 
     private void OnTriggerEnter(Collider c)
     {
         //Debug.Log(c.name + " | " + currentTarget.name);
-
-        if (c.name == currentTarget.name)
-            Next();
 	
-        if (c.name == endMarker.name)
+		if (c.name == currentTarget.name)
+			Next();
+	
+
+		if (c.name == endMarker.name)
             currentTarget = null;
         if (c.name == midPoint1.name)
             currentTarget = midPoint2;
+	
        
         
        

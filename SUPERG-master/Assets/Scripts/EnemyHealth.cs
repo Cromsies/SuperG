@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour {
 	//public Component[] enemies;
 	public GameObject enemies;
 	public Material colorChange;
+	public Transform Respawn;
 	void Awake()
 	{
 
@@ -16,7 +17,9 @@ public class EnemyHealth : MonoBehaviour {
 	void Update()
 	{
 		if (health < 1)
-			Destroy(gameObject);
+			transform.position = Respawn.position;
+		if(transform.position == Respawn.position)
+			health = (health + 100) * 2;
 
 		foreach (Transform child in enemies.transform)
 		{

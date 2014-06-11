@@ -41,6 +41,7 @@
 'Assets/Scripts/PlayerMove.cs'
 'Assets/Scripts/bullet.cs'
 'Assets/Scripts/enemyBullet.cs'
+'Assets/Scripts/enemyShoot.cs'
 'Assets/Scripts/playerHealth.cs'
 'Assets/Scripts/shoot.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
