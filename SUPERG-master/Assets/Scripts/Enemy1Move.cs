@@ -14,13 +14,15 @@ public class Enemy1Move : MonoBehaviour
     public Transform endMarker;
     //public bool hasSpawn = false;
     public float speed = 0.1f;
-    
+	public Transform ebullets;
     public Transform currentTarget = null;
     public Animator anim = null;
 
 	IEnumerator MyMethod() 
 	{
-		yield return new WaitForSeconds(4);
+		yield return new WaitForSeconds(3);
+
+	
 
 		yield break;
 	}
@@ -43,6 +45,7 @@ public class Enemy1Move : MonoBehaviour
 
 		if (transform.position == startMarker.position)
 			currentTarget = midPoint1;
+	
     }
 
     private void Next()
@@ -65,6 +68,8 @@ public class Enemy1Move : MonoBehaviour
         if (anim != null)
             anim.SetBool("Idle", true);
 		StartCoroutine(MyMethod());
+
+
     }
 
     private void OnTriggerEnter(Collider c)
@@ -72,8 +77,11 @@ public class Enemy1Move : MonoBehaviour
         //Debug.Log(c.name + " | " + currentTarget.name);
 		if (currentTarget !=null)
 			if (c.name == currentTarget.name)
-				Next();
-	
+		{				
+			Transform shot = Instantiate(ebullets, transform.position, Quaternion.identity) as Transform;
+
+			Next();
+		}
 
 		if (c.name == endMarker.name)
             currentTarget = null;
