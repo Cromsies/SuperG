@@ -13,7 +13,13 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             transform.position += Vector3.left * Speed * Time.deltaTime;
 
-    
+
+		var pos = transform.position; 
+
+
+		pos.x = Mathf.Clamp (transform.position.x, -14.0f, 14.0f);
+
+		transform.position = pos;
         
         /*
                 float translation = Input.GetAxis("Horizontal") * Speed;

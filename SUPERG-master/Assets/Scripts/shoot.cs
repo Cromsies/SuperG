@@ -9,9 +9,14 @@ public class shoot : MonoBehaviour
     public static float accuracy;
     //public int hitCounter;
 	public static playerHealth ph1;
-    void Start()
-    {
+    void Awake()
+	{
 		Bbullet.renderer.enabled = true;
+	}
+
+	void Start()
+    {
+
        //Bbullet = GetComponent<bullet>();
         if (shotCounter > 0)
             accuracy = (bullet.hitCounter / 2) / shotCounter;

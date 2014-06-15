@@ -4,7 +4,7 @@ using System.Collections;
 public class playerHealth : MonoBehaviour
 {
 
-    public int health = 200;
+    public static int health = 200;
     //public Component[] enemies;
     public GameObject gameOver;
     public GameObject stats;
@@ -21,7 +21,7 @@ public class playerHealth : MonoBehaviour
     {
         renderer.enabled = true;
         
-        
+		health = 200;
     }
 
     private void Start()
