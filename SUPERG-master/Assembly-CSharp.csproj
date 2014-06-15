@@ -49,11 +49,15 @@
      <Compile Include="Assets\Scripts\Enemy1Move.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\Scripts\StartScreen.cs" />
+     <Compile Include="Assets\Scripts\StatCreator.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
      <Compile Include="Assets\Scripts\enemyBullet.cs" />
      <Compile Include="Assets\Scripts\enemyShoot.cs" />
+     <Compile Include="Assets\Scripts\gameOverMan.cs" />
      <Compile Include="Assets\Scripts\playerHealth.cs" />
      <Compile Include="Assets\Scripts\shoot.cs" />
+     <None Include="Assets\Shader\StartBlink.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

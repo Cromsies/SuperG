@@ -8,34 +8,33 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject enemies;
 	public Material colorChange;
 	public Transform Respawn;
+    //public Animator deadAnim = null;
+    
+    public GameObject enemyDeath = null;
+
+    IEnumerator spawnDelay()
+    {
+        
+        yield return new WaitForSeconds(3);
+        health = 200;
+        yield break;
+    }
 	void Awake()
 	{
-
 		enemies = GameObject.Find("Enemy");
 	}
-	
+    void Start()
+    {
+       // deadAnim = GetComponent<Animator>();
+    }
+    
 	void Update()
 	{
-		if (health < 1)
-			transform.position = Respawn.position;
-		if(transform.position == Respawn.position)
-			health = (health + 100) * 2;
-
-		foreach (Transform child in enemies.transform)
-		{
-			child.gameObject.renderer.material = colorChange;
-		}
-
-
-
-		if(health > 101)
-			colorChange.color = Color.blue;
-		else 
-			colorChange.color = Color.red;
-		/*enemies = GetComponentsInChildren<Renderer>();
-		foreach (var r in enemies)
-			r.material.color = Color.red;*/
-	
+        if (health < 1)
+            transform.position = Respawn.position;
+                 
+                    StartCoroutine(spawnDelay());
+     
 
 	}
 
@@ -43,13 +42,26 @@ public class EnemyHealth : MonoBehaviour {
 	public void damage()
 	{
 		health = health - 100;
+
+        if (health <= 0)
+            
+            dead();
 	}
 
 	void OnTriggerEnter(Collider c)
 	{
-		if ( c.tag == "bullet")
+        if (c.tag == "bullet")
 			damage();
 
 	}
 
+    private void dead()
+    {
+        
+        // Do this before you move your invader back
+        Destroy(Instantiate(enemyDeath, transform.position, enemyDeath.transform.rotation), 0.4f);
+           
+        
+        
+    }
 }

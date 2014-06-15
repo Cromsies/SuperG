@@ -4,14 +4,15 @@ using System.Collections;
 public class enemyBullet : MonoBehaviour 
 
 {
+    public float speed = 0.4f;
 	void Start()
 	{
-		Destroy(gameObject, 1);
+		Destroy(gameObject, 3);
 	}
 	
 	void Update()
 	{
-		transform.Translate(0, 0, 1);
+		transform.Translate(0, 0, speed);
 	}
 	private void OnTriggerEnter(Collider c)
 	{
@@ -21,7 +22,7 @@ public class enemyBullet : MonoBehaviour
 			//Destroy(c.gameObject);
 			Destroy(gameObject);
 			
-			Debug.Log(c.transform.position);
+			//Debug.Log(c.transform.position);
 		}
 	}
 }
