@@ -16,7 +16,7 @@ public class StartScreen : MonoBehaviour {
 
 	void Update ()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.Space))
             turnoffStart();
 
         return;

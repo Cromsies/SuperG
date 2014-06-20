@@ -32,7 +32,7 @@ public class Rotater : MonoBehaviour
 		yield break;
 	}
 
-void Start()
+void Start()// NOT USING THIS CODE CURRENTLY
 	{
 	
 			StartCoroutine(delay());

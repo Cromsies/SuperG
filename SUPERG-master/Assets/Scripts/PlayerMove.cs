@@ -34,7 +34,9 @@ public class PlayerMove : MonoBehaviour
     }
 	void OnTriggerEnter (Collider c)
 	{
-		//if(c.tag == c.tag)
+		var pos = transform.position;
+		if(c.tag == "Pickup")
+			pos.x = Mathf.Clamp (transform.position.x, -15.0f, 15.0f);
 
 	}
 }
