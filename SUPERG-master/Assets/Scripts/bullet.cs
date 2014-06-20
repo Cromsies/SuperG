@@ -8,7 +8,7 @@ public class bullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 3);
     }
 
     void Update()

@@ -1,17 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Rotater.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SecondShoot.cs">
     <Files>
       <File FileName="Assets/Scripts/EnemyHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/playerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy1Move.cs" Line="15" Column="4" />
-      <File FileName="Assets/Scripts/bullet.cs" Line="8" Column="1" />
-      <File FileName="Assets/Scripts/Rotater.cs" Line="35" Column="45" />
+      <File FileName="Assets/Scripts/playerHealth.cs" Line="64" Column="8" />
+      <File FileName="Assets/Scripts/shoot.cs" Line="35" Column="33" />
+      <File FileName="Assets/Scripts/Enemy1Move.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/bullet.cs" Line="11" Column="30" />
+      <File FileName="Assets/Scripts/Rotater.cs" Line="34" Column="3" />
       <File FileName="Assets/Shader/ColorMix.shader" Line="1" Column="1" />
       <File FileName="Assets/Scripts/gameOverMan.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/StartScreen.cs" Line="25" Column="1" />
-      <File FileName="Assets/Scripts/PickUps.cs" Line="32" Column="24" />
+      <File FileName="Assets/Scripts/StartScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PickUps.cs" Line="11" Column="29" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="6" Column="5" />
+      <File FileName="Assets/SecondShip.cs" Line="42" Column="19" />
+      <File FileName="Assets/SecondShoot.cs" Line="20" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

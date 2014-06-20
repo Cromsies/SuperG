@@ -32,11 +32,11 @@ public class PlayerMove : MonoBehaviour
                 transform.Translate(translation *-1,0,0);
               */
     }
-	void OnTriggerEnter (Collider c)
+/*	void OnTriggerEnter (Collider c)
 	{
 		var pos = transform.position;
 		if(c.tag == "Pickup")
 			pos.x = Mathf.Clamp (transform.position.x, -15.0f, 15.0f);
 
-	}
+	}*/
 }

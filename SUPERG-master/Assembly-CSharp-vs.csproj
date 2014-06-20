@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\PickUps.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\Rotater.cs" />
+     <Compile Include="Assets\Scripts\SecondShip.cs" />
+     <Compile Include="Assets\Scripts\SecondShoot.cs" />
      <Compile Include="Assets\Scripts\StartScreen.cs" />
      <Compile Include="Assets\Scripts\StatCreator.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />

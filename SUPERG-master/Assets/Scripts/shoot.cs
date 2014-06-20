@@ -3,7 +3,7 @@ using System.Collections;
 
 public class shoot : MonoBehaviour
 {
-    public Transform Bbullet;
+	public Transform Bbullet = null;
     public static float shotCounter;
     //public bullet Bbullet;
     public static float accuracy;
@@ -32,9 +32,8 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftAlt))
         {
             Transform shot = Instantiate(Bbullet, transform.position, Quaternion.identity) as Transform;
-            if(Rotater.allowance = true)
-				shotCounter = shotCounter + 2;
-			else shotCounter++;
+            
+			shotCounter++ ;
 			audio.clip = pew;
 			audio.Play ();
         }
