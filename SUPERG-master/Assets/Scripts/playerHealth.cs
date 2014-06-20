@@ -11,8 +11,7 @@ public class playerHealth : MonoBehaviour
     public Vector3 statPopup;
     public GameObject playerDeath = null;
     public static bullet Bullet;
-    
-    
+ 
 
 
     public Vector3 Center;// =new Vector3(0.1558609, 0.4 , -11.97797);
@@ -21,7 +20,7 @@ public class playerHealth : MonoBehaviour
     {
         renderer.enabled = true;
         
-		health = 200;
+		health = 1000;
     }
 
     private void Start()
@@ -66,7 +65,7 @@ public class playerHealth : MonoBehaviour
         collider.enabled = false;
         Destroy(Instantiate(playerDeath, transform.position, playerDeath.transform.rotation), 0.4f);
         
-
+		//guiController.SetHighScore();
         StartCoroutine(gameDelay());
     }
 }

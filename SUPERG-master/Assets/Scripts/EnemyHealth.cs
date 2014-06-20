@@ -6,26 +6,31 @@ public class EnemyHealth : MonoBehaviour {
 	public int health = 100;
 	//public Component[] enemies;
 	public GameObject enemies;
-	public Material colorChange;
+
 	public Transform Respawn;
     //public Animator deadAnim = null;
     
     public GameObject enemyDeath = null;
+
+
 
     IEnumerator spawnDelay()
     {
         
         yield return new WaitForSeconds(3);
         health = 200;
+
         yield break;
     }
 	void Awake()
 	{
+		if(tag == "BigEnemy")
+			health =500;
 		enemies = GameObject.Find("Enemy");
 	}
     void Start()
     {
-       // deadAnim = GetComponent<Animator>();
+	
     }
     
 	void Update()
@@ -34,7 +39,7 @@ public class EnemyHealth : MonoBehaviour {
             transform.position = Respawn.position;
                  
                     StartCoroutine(spawnDelay());
-     
+  
 
 	}
 

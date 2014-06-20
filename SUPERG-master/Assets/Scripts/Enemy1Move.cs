@@ -16,7 +16,6 @@ public class Enemy1Move : MonoBehaviour
 	public Transform ebullets;
     public Transform currentTarget = null;
     public Animator anim = null;
-    
 
     public bool shooting = false;
    
@@ -24,8 +23,21 @@ public class Enemy1Move : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        currentTarget = midPoint1;
-    }
+
+        if(tag != "BigEnemy")
+		{
+			currentTarget = midPoint1;
+		}
+		else StartCoroutine(Delay());
+	}
+	
+		IEnumerator Delay()
+		{
+			yield return new WaitForSeconds(5);
+			currentTarget = midPoint1;
+			yield break;
+
+		}
 
         IEnumerator MyMethod() 
 	{
@@ -45,20 +57,22 @@ public class Enemy1Move : MonoBehaviour
         // normalized takes two points on a large vector and simplifies it to 0-1.
         //transform.position = Vector3.Lerp(transform.position, currentTarget.position, speed * Time.deltaTime  );
         
-        if (currentTarget == null )
+        if (currentTarget == null && tag != "BigEnemy" )
             Idle();
 
 
         if (transform.position == startMarker.position)
             currentTarget = midPoint1;
 
-        
+		oppoIdle();
+
         
     }
 
     private void Next()
     {
    
+
 		if (currentTarget == midPoint1)
             currentTarget = midPoint2;
         else if (currentTarget == midPoint2)
@@ -68,8 +82,12 @@ public class Enemy1Move : MonoBehaviour
 			return;
           
     }
-
-    private void Idle()
+	private void oppoIdle()
+	{
+		if(!shooting && tag == "BigEnemy")
+			StartCoroutine(MyMethod());
+	}
+	private void Idle()
     {
         if (anim != null)
             anim.SetBool("Idle", true);
@@ -92,7 +110,7 @@ public class Enemy1Move : MonoBehaviour
 			Next();
 		}
 
-		if (c.name == endMarker.name)
+		if (c.name == endMarker.name && currentTarget == endMarker)
             currentTarget = null;
         if (c.name == midPoint1.name)
             currentTarget = midPoint2;

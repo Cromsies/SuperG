@@ -9,6 +9,9 @@ public class shoot : MonoBehaviour
     public static float accuracy;
     //public int hitCounter;
 	public static playerHealth ph1;
+	public AudioClip pew = null;
+
+
     void Awake()
 	{
 		Bbullet.renderer.enabled = true;
@@ -29,7 +32,11 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftAlt))
         {
             Transform shot = Instantiate(Bbullet, transform.position, Quaternion.identity) as Transform;
-            shotCounter++;
+            if(Rotater.allowance = true)
+				shotCounter = shotCounter + 2;
+			else shotCounter++;
+			audio.clip = pew;
+			audio.Play ();
         }
         if (shotCounter > 0)
         accuracy = (bullet.hitCounter/2) / shotCounter;
