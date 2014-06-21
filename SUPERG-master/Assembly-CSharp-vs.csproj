@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\SecondShoot.cs" />
      <Compile Include="Assets\Scripts\StartScreen.cs" />
      <Compile Include="Assets\Scripts\StatCreator.cs" />
+     <Compile Include="Assets\Scripts\TutScreen.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
      <Compile Include="Assets\Scripts\enemyBullet.cs" />
      <Compile Include="Assets\Scripts\enemyShoot.cs" />

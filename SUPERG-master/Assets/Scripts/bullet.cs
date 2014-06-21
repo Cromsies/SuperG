@@ -20,7 +20,7 @@ public class bullet : MonoBehaviour
 	{
 	
         
-        if (c.tag != "Player" )
+        if (c.tag != "Player" && c.tag != "ebullet")
 		{
             hitCounter++;
             //Destroy(c.gameObject);

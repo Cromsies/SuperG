@@ -4,11 +4,21 @@ using System.Collections;
 public class PickUps : MonoBehaviour 
 {
 	public Rotater pissOff;
-
+	public GameObject secondShip = null;
+	public Transform shipPosition = null;
+	
+	
+	public void powerUp ()
+	{
+		Instantiate(secondShip, shipPosition.position, Quaternion.identity);
+		
+		
+	}
 	void Start()
 	{
-		Destroy(gameObject, 5);
-		Rotater.allowance = false;
+
+		Destroy(gameObject, 6);
+		//Rotater.allowance = false;
 	}
 	
 	void Update()
@@ -23,9 +33,9 @@ void OnTriggerEnter(Collider c)
 	if(c.tag == "Player")
 	{
 		
-			Rotater.allowance = true;
-			pissOff.powerUp();
-			Destroy(gameObject);
+
+	powerUp();
+	Destroy(gameObject);
 	
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class StartScreen : MonoBehaviour {
+	public GameObject tutScreen = null;
 
     void Start()
     {
@@ -10,8 +11,9 @@ public class StartScreen : MonoBehaviour {
 
     private void turnoffStart()
     {
+		Instantiate(tutScreen, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
-        Time.timeScale = 1;
+
     }
 
 	void Update ()
